@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 5rem;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.3rem;
+}
+
+// Change to fit design need
+$btnColor: #007c8a;
+
+// Remove underline
+a.button {
+  text-decoration: none;
+}
+
+// Basic reset styles
+button.button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+  cursor: pointer;
+
+  @media screen and (-ms-high-contrast: active) {
+    border: 2px solid currentcolor;
+  }
+}
+
+a.button,
+button.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a.button,
+button.button {
+  background-color: $btnColor;
+  color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  padding: 0.25em 0.75em;
+  min-width: 10ch;
+  min-height: 44px;
+  text-align: center;
+  line-height: 1.1;
+  transition: 220ms all ease-in-out;
+
+  &:hover,
+  &:active {
+    background-color: scale-color($btnColor, $lightness: -15%);
+  }
+
+  &:focus {
+    outline-style: solid;
+    outline-color: transparent;
+    box-shadow: 0 0 0 2px scale-color($btnColor, $lightness: -30%);
+  }
+
+  &--small {
+    font-size: 1.15rem;
+  }
+  &--block {
+    width: 100%;
+  }
+}
